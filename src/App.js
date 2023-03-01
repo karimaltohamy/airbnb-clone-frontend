@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import axios from "axios";
+import AccountPage from "./pages/AccountPage";
+import Places from "./components/Places";
+import MyBookings from "./components/MyBookings";
+import PlaceForm from "./components/PlaceForm";
+import PlacePage from "./pages/PlacePage";
+import BookingPage from "./pages/BookingPage";
+
+axios.defaults.baseURL = "https://airbnb-clone-backend.onrender.com";
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="account" element={<AccountPage />} />
+        <Route path="account/places" element={<Places />} />
+        <Route path="account/places/new" element={<PlaceForm />} />
+        <Route path="account/places/:id" element={<PlaceForm />} />
+        <Route path="account/mybookings" element={<MyBookings />} />
+        <Route path="account/mybookings/:id" element={<BookingPage />} />
+        <Route path="places/:id" element={<PlacePage />} />
+      </Route>
+    </Routes>
   );
 }
 

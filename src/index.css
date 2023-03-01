@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  .content {
+    @apply px-4 md:px-8;
+  }
+
+  body {
+    @apply font-Nunito;
+  }
+
+  input,
+  textarea {
+    @apply border border-gray-300 rounded-md text-gray-600 outline-none	py-1 px-3 text-base;
+  }
+
+  .btn-primary {
+    @apply p-1 bg-primary rounded-full text-white;
+  }
 }
