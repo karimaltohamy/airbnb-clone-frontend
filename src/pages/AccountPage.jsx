@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import NavAccount from "../components/NavAccount";
-import Places from "../components/Places";
 import { mainContext } from "../context/mainContext";
 
 const AccountPage = () => {

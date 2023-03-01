@@ -32,7 +32,7 @@ const PlaceForm = () => {
         setPrice(data.price);
       });
     }
-  }, []);
+  }, [id]);
 
   const handleSavePlace = async (e) => {
     e.preventDefault();

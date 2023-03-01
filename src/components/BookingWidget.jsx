@@ -19,7 +19,7 @@ const BookingWidget = ({ place }) => {
     if (user) {
       setFullName(user.username);
     }
-  }, []);
+  }, [user]);
 
   if (checkIn && checkOut) {
     numberOfNight = differenceInCalendarDays(

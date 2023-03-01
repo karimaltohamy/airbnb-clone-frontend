@@ -12,6 +12,7 @@ const PlacePage = () => {
 
   useEffect(() => {
     axios.get(`/places/${id}`).then(({ data }) => setPlace(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (showAllPhotos) {

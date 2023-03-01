@@ -17,7 +17,7 @@ const BookingPage = () => {
         setBooking(data.find((item) => item._id === id));
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   if (showAllPhotos) {
     return (
