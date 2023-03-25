@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { mainContext } from "../context/mainContext";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const Login = () => {
     try {
       const { data } = await axios.post("/login", { email, password });
       setUser(data);
+      Cookies.set("token", data.token);
       alert("login successful");
       serRedirct(true);
     } catch (error) {
