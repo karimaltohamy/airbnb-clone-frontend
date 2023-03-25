@@ -13,6 +13,7 @@ import BookingPage from "./pages/BookingPage";
 
 axios.defaults.baseURL = "https://busy-bee-sweatpants.cyclic.app";
 axios.defaults.withCredentials = true;
+axios.AxiosHeaders = { "Access-Control-Allow-Origin": "*" };
 
 function App() {
   return (
