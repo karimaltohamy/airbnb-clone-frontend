@@ -8,9 +8,15 @@ const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useState(() => {
-    axios.get("/bookings").then(({ data }) => {
-      setBookings(data);
-    });
+    axios
+      .get("/bookings", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .then(({ data }) => {
+        setBookings(data);
+      });
   }, []);
   return (
     <Fragment>

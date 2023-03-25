@@ -7,7 +7,11 @@ const Places = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
     axios
-      .get("/user-places")
+      .get("/user-places", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then(({ data }) => setPlaces(data))
       .catch((error) => console.log(error));
   }, []);
