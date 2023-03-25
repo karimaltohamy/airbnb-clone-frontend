@@ -11,7 +11,7 @@ import PlaceForm from "./components/PlaceForm";
 import PlacePage from "./pages/PlacePage";
 import BookingPage from "./pages/BookingPage";
 
-axios.defaults.baseURL = "https://airbnb-clone-backend.onrender.com";
+axios.defaults.baseURL = "https://busy-bee-sweatpants.cyclic.app";
 axios.defaults.withCredentials = true;
 
 function App() {
